@@ -9,30 +9,31 @@
         @includeIf($beforeCalendarView)
     </div>
 
-    <div class="overflow-x-auto w-full">
-        <table class="table-auto">
-            <thead>
-                <tr>
+    <div class="flex">
+        <div class="overflow-x-auto w-full">
+            <div class="inline-block min-w-full overflow-hidden">
+
+                <div class="w-full flex flex-row">
                     @foreach($monthGrid->first() as $day)
-                        <th class="px-4 py-2">{{ $day->format('D') }}</th>
+                        @include($dayOfWeekView, ['day' => $day])
                     @endforeach
-                </tr>
-            </thead>
-            <tbody>
+                </div>
+
                 @foreach($monthGrid as $week)
-                    <tr>
+                    <div class="w-full flex flex-row">
                         @foreach($week as $day)
-                            <td class="px-4 py-2 border">
-                                <div class="text-center">
-                                    {{ $day->format('j') }}
-                                </div>
-                                <!-- Aquí puedes agregar cualquier otra información, como eventos para este día -->
-                            </td>
+                            @include($dayView, [
+                                    'componentId' => $componentId,
+                                    'day' => $day,
+                                    'dayInMonth' => $day->isSameMonth($startsAt),
+                                    'isToday' => $day->isToday(),
+                                    'events' => $getEventsForDay($day, $events),
+                                ])
                         @endforeach
-                    </tr>
+                    </div>
                 @endforeach
-            </tbody>
-        </table>
+            </div>
+        </div>
     </div>
 
     <div>
