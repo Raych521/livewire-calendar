@@ -18,7 +18,7 @@
 
                 <div class="grid grid-cols-7 gap-4">
                     @foreach ($monthGrid as $week)
-                        <div class="w-full flex flex-row">
+                        
                             @foreach ($week as $day)
                                 <div class="border p-4 text-center">
                                     <span class="block font-bold">{{ $day->format('j') }}</span>
@@ -31,7 +31,7 @@
                                     ])
                                 </div>
                             @endforeach
-                        </div>
+                      
                     @endforeach
                 </div>
             </div>
