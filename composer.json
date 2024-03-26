@@ -1,0 +1,54 @@
+{
+    "name": "raych521/livewire-calendar",
+    "description": "Laravel Livewire calendar component",
+    "keywords": [
+        "raych521",
+        "livewire-calendar"
+    ],
+    "homepage": "https://github.com/raych521/livewire-calendar",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Rigoberto Yñape",
+            "email": "rigo_521@hotmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2|^8.0|^8.1|^8.2",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0",
+        "livewire/livewire": "^2.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0|^6.0",
+        "phpunit/phpunit": "^8.0|^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Raych521\\LivewireCalendar\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Raych521\\LivewireCalendar\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Raych521\\LivewireCalendar\\LivewireCalendarServiceProvider"
+            ],
+            "aliases": {
+                "LivewireCalendar": "Raych521\\LivewireCalendar\\LivewireCalendarFacade"
+            }
+        }
+    }
+}
