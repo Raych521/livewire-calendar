@@ -13,7 +13,7 @@
         <div class="overflow-x-auto w-full">
             <div class="inline-block min-w-full overflow-hidden">
 
-                <div class="grid grid-cols-7 gap-4">
+                <div class="grid grid-cols-7">
                     @foreach($monthGrid->first() as $day)
                         <div class="border p-4 text-center">
                             @include($dayOfWeekView, ['day' => $day])
