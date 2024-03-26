@@ -2,9 +2,8 @@
 
 namespace Raych521\LivewireCalendar\Tests;
 
-use Illuminate\Support\Facades\Artisan;
+
 use Raych521\LivewireCalendar\LivewireCalendar;
-use Livewire\LivewireManager;
 use Livewire\Livewire;
 
 class LivewireCalendarTest extends TestCase
